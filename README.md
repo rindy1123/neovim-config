@@ -1,5 +1,21 @@
 # Setup
+First, install neovim
 
+https://github.com/neovim/neovim/wiki/Installing-Neovim
+
+Then,
+```bash
+# Mac
+cd ~/.config
+
+git clone https://github.com/rindy1123/neovim-config.git
+
+mv neovim-config nvim
+
+nvim
+```
+
+After running neovim, switch into command mode and type them
 ```vim
 " Command Mode
 :PlugInstall
@@ -32,3 +48,8 @@ https://github.com/rafi/awesome-vim-colorschemes
 
 # More CoC extensions
 https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
+
+# Reference
+Almost all settings are from ChrisAtMachine's Youtube channel( https://www.youtube.com/channel/UCS97tchJDq17Qms3cux8wcA ) and his blog( https://www.chrisatmachine.com/ ).
+
+Thanks for great and useful information!
