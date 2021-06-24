@@ -1,9 +1,9 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhistcnt =0
-let g:netrw_dirhist_0='/Users/nakajimagenfutoshi/.config/nvim/vim-plug'
-let g:netrw_dirhist_9='/Users/nakajimagenfutoshi/.config/nvim'
-let g:netrw_dirhist_8='/Users/nakajimagenfutoshi/.config/nvim/vim-plug'
-let g:netrw_dirhist_7='/Users/nakajimagenfutoshi/.config/nvim'
+let g:netrw_dirhist_0='/Users/nakajimagenfutoshi/personal_space/rust_projects/my-webserver/src'
+let g:netrw_dirhist_9='/Users/nakajimagenfutoshi/personal_space/rust_projects/my-webserver'
+let g:netrw_dirhist_8='/Users/nakajimagenfutoshi/personal_space/rust_projects/my-webserver/src'
+let g:netrw_dirhist_7='/Users/nakajimagenfutoshi/personal_space/rust_projects/my-webserver'
 let g:netrw_dirhist_6='/Users/nakajimagenfutoshi/personal_space/rust_projects/my-webserver/src/bin'
 let g:netrw_dirhist_5='/Users/nakajimagenfutoshi/personal_space/rust_projects/my-webserver/src'
 let g:netrw_dirhist_4='/Users/nakajimagenfutoshi/personal_space/rust_projects/my-webserver'

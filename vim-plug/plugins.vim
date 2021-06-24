@@ -34,4 +34,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'airblade/vim-rooter'
     " Parentheses color
     Plug 'luochen1990/rainbow'
+    " Comment out/Uncomment
+    Plug 'tomtom/tcomment_vim'
 call plug#end()
