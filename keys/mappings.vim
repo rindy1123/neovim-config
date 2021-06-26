@@ -9,8 +9,8 @@ nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
 " I hate escape more than anything else
-inoremap jk <Esc>
-inoremap kj <Esc>
+inoremap jk <Esc>:w<CR>
+inoremap kj <Esc>:w<CR>
 
 " Easy CAPS
 inoremap <c-u> <ESC>viwUi
