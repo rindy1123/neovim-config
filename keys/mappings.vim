@@ -44,3 +44,8 @@ nnoremap <C-c> :close<CR>
 
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
+
+" Auto save wrapping
+nnoremap dd dd:w<CR>
+nnoremap u u:w<CR>
+nnoremap D D:w<CR>
