@@ -49,3 +49,6 @@ nnoremap <Leader>O O<Esc>^Da
 nnoremap dd dd:w<CR>
 nnoremap u u:w<CR>
 nnoremap D D:w<CR>
+
+" Add new line
+nnoremap oo o<ESC>:w<CR>
