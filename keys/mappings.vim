@@ -9,8 +9,8 @@ nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
 " I hate escape more than anything else
-inoremap jk <Esc>:w<CR>
-inoremap kj <Esc>:w<CR>
+inoremap jk <Esc>
+inoremap kj <Esc>
 
 " Easy CAPS
 inoremap <c-u> <ESC>viwUi
@@ -22,9 +22,10 @@ nnoremap <TAB> :bnext<CR>
 nnoremap <S-TAB> :bprevious<CR>
 
 " Alternate way to save
-nnoremap <C-s> :w<CR>
+nnoremap sa :w<CR>
+nnoremap as :w<CR>
 " Alternate way to quit
-nnoremap <C-Q> :wq!<CR>
+nnoremap wq :wq!<CR>
 " Use control-c instead of escape
 nnoremap <C-c> <Esc>
 " <TAB>: completion.
@@ -45,9 +46,3 @@ nnoremap <C-c> :close<CR>
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
 
-" Auto save wrapping
-nnoremap dd dd:w<CR>
-nnoremap D D:w<CR>
-
-" Add new line
-nnoremap oo o<ESC>:w<CR>
