@@ -1,5 +1,6 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "html", "yaml",  "json", "rust", "typescriptreact", "typescript"],
+  "eslint.autoFixOnSave": true,
   // explorer
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
