@@ -1,1 +1,1 @@
-colorscheme default
+colorscheme codedark
