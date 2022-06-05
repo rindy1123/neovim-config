@@ -23,7 +23,7 @@ After running neovim, switch into command mode and type them
 " Command Mode
 PlugInstall
 
-CocInstall coc-spell-checker coc-snippets coc-explorer coc-vimlsp coc-json coc-tsserver coc-prettier coc-eslint coc-stylelint coc-html
+CocInstall coc-spell-checker coc-snippets coc-explorer coc-vimlsp coc-json coc-tsserver coc-prettier coc-eslint coc-stylelint coc-html coc-rust-analyzer
 ```
 
 If you don't have Nerd Fonts, install it and set it as your terminal font
