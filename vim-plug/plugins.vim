@@ -36,4 +36,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'luochen1990/rainbow'
     " Comment out/Uncomment
     Plug 'tomtom/tcomment_vim'
+    " Startup Screen
+    Plug 'mhinz/vim-startify'
 call plug#end()
