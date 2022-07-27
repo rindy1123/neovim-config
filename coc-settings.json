@@ -1,5 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "html", "yaml",  "json", "rust", "typescriptreact", "typescript"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "html", "yaml",  "json", "rust", "typescriptreact", "typescript", "ruby"],
   "eslint.autoFixOnSave": true,
   // explorer
   "explorer.width": 30,
@@ -8,5 +8,10 @@
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
-  }
+  },
+  // for ruby
+  "solargraph.diagnostics": true,
+  "solargraph.autoformat": true,
+  "solargraph.formatting": true,
+  "solargraph.hover": true
 }

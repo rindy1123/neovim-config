@@ -38,4 +38,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tomtom/tcomment_vim'
     " Startup Screen
     Plug 'mhinz/vim-startify'
+    " For RoR
+    Plug 'tpope/vim-rails'
 call plug#end()
