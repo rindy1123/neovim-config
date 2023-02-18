@@ -68,6 +68,8 @@ plugin_list = {
 	{'airblade/vim-rooter'},
   -- File Exproler
   {'nvim-tree/nvim-web-devicons'},
-  {'nvim-tree/nvim-tree.lua'}
+  {'nvim-tree/nvim-tree.lua'},
+  -- Toggle Trancparency
+  {'xiyaowong/nvim-transparent'}
 }
 lazy.setup(plugin_list)
