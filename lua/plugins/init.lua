@@ -24,11 +24,6 @@ function lazy.setup(plugins)
   require('lazy').setup(plugins, lazy.opts)
 end
 
--- Status Line Settings
-vim.g.airline_theme = 'zenburn'
-vim.g.airline_powerline_fonts = 1
-vim.cmd("let g:airline#extensions#tabline#enabled = 1")
-
 plugin_list = {
   -- Better Syntax Support
 	{'sheerun/vim-polyglot'},
@@ -46,15 +41,16 @@ plugin_list = {
   -- Startup Screen
 	{'mhinz/vim-startify'},
 	-- colorscheme
-	{
-    'folke/tokyonight.nvim',
+  {
+    'tomasiser/vim-code-dark',
     lazy = false,
     priority = 1000,
     config = function()
       -- load the colorscheme here
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd([[colorscheme codedark]])
     end,
   },
+  {'folke/tokyonight.nvim'},
 	-- Stable version of coc
 	{'neoclide/coc.nvim', branch = 'release'},
   -- Git
