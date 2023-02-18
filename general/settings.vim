@@ -34,9 +34,10 @@ set nowritebackup                       " This is recommended by coc
 set updatetime=300                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
-set clipboard=unnamedplus               " Copy paste between vim and everything else
+set clipboard+=unnamedplus               " Copy paste between vim and everything else
 set number                              " Show current line number
 set relativenumber                      " Show relative line numbers
+set nocursorline                        " Remove highlight of cursor line
 "set autochdir                          " Your working directory will always be the same as your working directory
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC

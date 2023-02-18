@@ -40,4 +40,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mhinz/vim-startify'
     " For RoR
     Plug 'tpope/vim-rails'
+    " Toggle transparency
+    Plug 'xiyaowong/nvim-transparent'
 call plug#end()
