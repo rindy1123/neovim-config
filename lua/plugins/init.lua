@@ -66,6 +66,11 @@ plugin_list = {
   {'nvim-tree/nvim-web-devicons'},
   {'nvim-tree/nvim-tree.lua'},
   -- Toggle Trancparency
-  {'xiyaowong/nvim-transparent'}
+  {'xiyaowong/nvim-transparent'},
+  -- Moving around the file
+  {'ggandor/leap.nvim'},
+  -- Toggle terminal
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
+  {'toppair/peek.nvim', run = 'deno task --quiet build:fast'},
 }
 lazy.setup(plugin_list)
