@@ -20,7 +20,7 @@ After running neovim, switch into command mode and type them
 
 ```vim
 " Command Mode
-CocInstall coc-spell-checker coc-snippets coc-explorer coc-vimlsp coc-json coc-tsserver coc-prettier coc-eslint coc-stylelint coc-html coc-rust-analyzer
+CocInstall coc-spell-checker coc-snippets coc-explorer coc-vimlsp coc-json coc-tsserver coc-prettier coc-eslint coc-stylelint coc-html coc-rust-analyzer coc-db
 ```
 
 If you don't have Nerd Fonts, install it and set it as your terminal font

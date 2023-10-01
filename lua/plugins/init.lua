@@ -72,5 +72,48 @@ plugin_list = {
   -- Toggle terminal
   {'akinsho/toggleterm.nvim', version = "*", config = true},
   {'toppair/peek.nvim', run = 'deno task --quiet build:fast'},
+  -- Database
+  -- :CocInstall coc-db to get auto completion
+  {'tpope/vim-dadbod'},
+  {'kristijanhusak/vim-dadbod-ui'},
+  -- Notifacation
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
+  -- GitHub Copilot
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          auto_trigger = true,
+          debounce = 300,
+          keymap = {
+            -- <Option-y>
+            accept = "¥",
+            -- <Option-f>
+            next = "ƒ",
+            -- <Option-b>
+            prev = "∫",
+            -- <Option-d>
+            dismiss = "∂",
+          },
+        },
+        filetypes = {
+          yaml = true,
+          markdown = true,
+          gitcommit = true,
+          gitrebase = true,
+        },
+      })
+    end,
+  },
 }
 lazy.setup(plugin_list)

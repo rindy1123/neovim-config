@@ -14,7 +14,6 @@ vim.opt.smarttab = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.hlsearch = false
 vim.opt.termguicolors = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
