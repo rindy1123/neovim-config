@@ -76,15 +76,6 @@ plugin_list = {
   -- :CocInstall coc-db to get auto completion
   {'tpope/vim-dadbod'},
   {'kristijanhusak/vim-dadbod-ui'},
-  -- Notifacation
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    }
-  },
   -- GitHub Copilot
   {
     "zbirenbaum/copilot.lua",
