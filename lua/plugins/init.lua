@@ -34,8 +34,6 @@ plugin_list = {
 	{'vim-airline/vim-airline-themes'},
   -- Font
 	{'ryanoasis/vim-devicons'},
-  -- Parentheses color
-	{'luochen1990/rainbow'},
   -- Comment out/Uncomment
 	{'tomtom/tcomment_vim'},
   -- Startup Screen
@@ -67,8 +65,6 @@ plugin_list = {
   {'nvim-tree/nvim-tree.lua'},
   -- Toggle Trancparency
   {'xiyaowong/nvim-transparent'},
-  -- Moving around the file
-  {'ggandor/leap.nvim'},
   -- Toggle terminal
   {'akinsho/toggleterm.nvim', version = "*", config = true},
   {'toppair/peek.nvim', run = 'deno task --quiet build:fast'},
