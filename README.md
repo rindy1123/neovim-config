@@ -45,6 +45,15 @@ brew install fd
  :LspInfo
 ```
 
+# Language support
+
+To add support for a language,
+
+1. Go to lsp.lua and add a language to `servers` and set up `lspconfig`
+1. Go to formatter.lua and add a formatter if exists
+1. Go to linter.lua and add a linter if exists
+1. Go to treesitter.lua and add a language
+
 # More Awesome Color Themes
 
 https://github.com/rafi/awesome-vim-colorschemes

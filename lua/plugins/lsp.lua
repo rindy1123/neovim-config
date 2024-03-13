@@ -9,7 +9,7 @@ local servers = {
 	"jsonls",
 	"docker_compose_language_service",
 	"dockerls",
-	"vale_ls",
+	"marksman",
 	"diagnosticls",
 }
 require("mason").setup()
@@ -87,9 +87,6 @@ local on_attach = function(_, _)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 	vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
-	vim.keymap.set("n", "<leader>f", function()
-		vim.lsp.buf.format({ async = true })
-	end, {})
 end
 
 -- Configuration for each language server
@@ -110,5 +107,5 @@ lspconfig.tsserver.setup({ on_attach = on_attach })
 lspconfig.jsonls.setup({ on_attach = on_attach })
 lspconfig.dockerls.setup({ on_attach = on_attach })
 lspconfig.docker_compose_language_service.setup({ on_attach = on_attach })
-lspconfig.vale_ls.setup({ on_attach = on_attach })
+lspconfig.marksman.setup({ on_attach = on_attach })
 lspconfig.diagnosticls.setup({ on_attach = on_attach })
