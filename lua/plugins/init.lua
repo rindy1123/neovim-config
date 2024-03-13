@@ -65,6 +65,8 @@ local plugin_list = {
   },
   -- Formatter
   { 'stevearc/conform.nvim' },
+  -- Linter
+  { 'mfussenegger/nvim-lint' },
   -- Git
   { 'mhinz/vim-signify' },
   { 'tpope/vim-fugitive' },
