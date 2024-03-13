@@ -26,40 +26,41 @@ end
 
 plugin_list = {
   -- Better Syntax Support
-	{'sheerun/vim-polyglot'},
-	-- Auto pairs for '(' '[' '{'
-	{'jiangmiao/auto-pairs'},
+  {'sheerun/vim-polyglot'},
+  -- Auto pairs for '(' '[' '{'
+  {'jiangmiao/auto-pairs'},
   -- Status Line
-	{'vim-airline/vim-airline'},
-	{'vim-airline/vim-airline-themes'},
+  {'vim-airline/vim-airline'},
+  {'vim-airline/vim-airline-themes'},
   -- Font
-	{'ryanoasis/vim-devicons'},
+  {'ryanoasis/vim-devicons'},
   -- Comment out/Uncomment
-	{'tomtom/tcomment_vim'},
+  {'tomtom/tcomment_vim'},
   -- Startup Screen
-	{'mhinz/vim-startify'},
-	-- colorscheme
+  {'mhinz/vim-startify'},
+  -- colorscheme
   {
     'tomasiser/vim-code-dark',
     lazy = false,
     priority = 1000,
     config = function()
       -- load the colorscheme here
-      vim.cmd([[colorscheme codedark]])
+      vim.cmd([[colorscheme tokyonight]])
     end,
   },
+  {'tomasiser/vim-code-dark'},
   {'folke/tokyonight.nvim'},
-	-- Stable version of coc
-	{'neoclide/coc.nvim', branch = 'release'},
+  -- Stable version of coc
+  {'neoclide/coc.nvim', branch = 'release'},
   -- Git
-	{'mhinz/vim-signify'},
+  {'mhinz/vim-signify'},
   {'tpope/vim-fugitive'},
   {'tpope/vim-rhubarb'},
-	{'junegunn/gv.vim'},
+  {'junegunn/gv.vim'},
   -- FZF & vim-rooter
-	{'junegunn/fzf'},
-	{'junegunn/fzf.vim'},
-	{'airblade/vim-rooter'},
+  {'junegunn/fzf'},
+  {'junegunn/fzf.vim'},
+  {'airblade/vim-rooter'},
   -- File Exproler
   {'nvim-tree/nvim-web-devicons'},
   {'nvim-tree/nvim-tree.lua'},
