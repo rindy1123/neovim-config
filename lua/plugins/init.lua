@@ -63,11 +63,8 @@ local plugin_list = {
     'saadparwaiz1/cmp_luasnip',
     'L3MON4D3/LuaSnip',
   },
-  -- Formatter/Linter
-  {
-    'jose-elias-alvarez/null-ls.nvim',
-    'nvim-lua/plenary.nvim',
-  },
+  -- Formatter
+  { 'stevearc/conform.nvim' },
   -- Git
   { 'mhinz/vim-signify' },
   { 'tpope/vim-fugitive' },
