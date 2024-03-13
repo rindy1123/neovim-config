@@ -24,20 +24,20 @@ function lazy.setup(plugins)
   require('lazy').setup(plugins, lazy.opts)
 end
 
-plugin_list = {
+local plugin_list = {
   -- Better Syntax Support
-  {'sheerun/vim-polyglot'},
+  { 'sheerun/vim-polyglot' },
   -- Auto pairs for '(' '[' '{'
-  {'jiangmiao/auto-pairs'},
+  { 'jiangmiao/auto-pairs' },
   -- Status Line
-  {'vim-airline/vim-airline'},
-  {'vim-airline/vim-airline-themes'},
+  { 'vim-airline/vim-airline' },
+  { 'vim-airline/vim-airline-themes' },
   -- Font
-  {'ryanoasis/vim-devicons'},
+  { 'ryanoasis/vim-devicons' },
   -- Comment out/Uncomment
-  {'tomtom/tcomment_vim'},
+  { 'tomtom/tcomment_vim' },
   -- Startup Screen
-  {'mhinz/vim-startify'},
+  { 'mhinz/vim-startify' },
   -- colorscheme
   {
     'tomasiser/vim-code-dark',
@@ -48,31 +48,43 @@ plugin_list = {
       vim.cmd([[colorscheme tokyonight]])
     end,
   },
-  {'tomasiser/vim-code-dark'},
-  {'folke/tokyonight.nvim'},
-  -- Stable version of coc
-  {'neoclide/coc.nvim', branch = 'release'},
+  { 'tomasiser/vim-code-dark' },
+  { 'folke/tokyonight.nvim' },
+  -- LSP
+  {
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
+    'saadparwaiz1/cmp_luasnip',
+    'L3MON4D3/LuaSnip',
+  },
+  -- Formatter/Linter
+  {
+    'jose-elias-alvarez/null-ls.nvim',
+    'nvim-lua/plenary.nvim',
+  },
   -- Git
-  {'mhinz/vim-signify'},
-  {'tpope/vim-fugitive'},
-  {'tpope/vim-rhubarb'},
-  {'junegunn/gv.vim'},
+  { 'mhinz/vim-signify' },
+  { 'tpope/vim-fugitive' },
+  { 'tpope/vim-rhubarb' },
+  { 'junegunn/gv.vim' },
   -- FZF & vim-rooter
-  {'junegunn/fzf'},
-  {'junegunn/fzf.vim'},
-  {'airblade/vim-rooter'},
+  { 'junegunn/fzf' },
+  { 'junegunn/fzf.vim' },
+  { 'airblade/vim-rooter' },
   -- File Exproler
-  {'nvim-tree/nvim-web-devicons'},
-  {'nvim-tree/nvim-tree.lua'},
+  { 'nvim-tree/nvim-web-devicons' },
+  { 'nvim-tree/nvim-tree.lua' },
   -- Toggle Trancparency
-  {'xiyaowong/nvim-transparent'},
+  { 'xiyaowong/nvim-transparent' },
   -- Toggle terminal
-  {'akinsho/toggleterm.nvim', version = "*", config = true},
-  {'toppair/peek.nvim', run = 'deno task --quiet build:fast'},
-  -- Database
-  -- :CocInstall coc-db to get auto completion
-  {'tpope/vim-dadbod'},
-  {'kristijanhusak/vim-dadbod-ui'},
+  { 'akinsho/toggleterm.nvim',    version = "*",                       config = true },
+  { 'toppair/peek.nvim',          run = 'deno task --quiet build:fast' },
   -- GitHub Copilot
   {
     "zbirenbaum/copilot.lua",
