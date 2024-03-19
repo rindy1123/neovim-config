@@ -13,6 +13,7 @@ configs.setup({
 		"javascript",
 		"html",
 		"typescript",
+		"sql",
 	},
 	sync_install = false,
 	highlight = { enable = true },

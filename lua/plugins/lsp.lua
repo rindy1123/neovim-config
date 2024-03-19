@@ -10,7 +10,9 @@ local servers = {
 	"docker_compose_language_service",
 	"dockerls",
 	"marksman",
+	"eslint",
 	"diagnosticls",
+	"sqls",
 }
 require("mason").setup()
 require("mason-lspconfig").setup({
@@ -109,3 +111,12 @@ lspconfig.dockerls.setup({ on_attach = on_attach })
 lspconfig.docker_compose_language_service.setup({ on_attach = on_attach })
 lspconfig.marksman.setup({ on_attach = on_attach })
 lspconfig.diagnosticls.setup({ on_attach = on_attach })
+lspconfig.sqls.setup({ on_attach = on_attach })
+lspconfig.eslint.setup({
+	on_attach = function(_, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "EslintFixAll",
+		})
+	end,
+})

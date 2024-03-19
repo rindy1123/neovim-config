@@ -9,6 +9,7 @@ require("conform").setup({
 		rust = { "rustfmt" },
 		json = { "jq" },
 		markdown = { "mdformat" },
+		sql = { "sqlfluff" },
 	},
 	format_on_save = {
 		-- These options will be passed to conform.format()

@@ -103,5 +103,13 @@ local plugin_list = {
 			require("dap-go").setup()
 		end,
 	},
+	-- Golang
+	{
+		"olexsmir/gopher.nvim",
+		dependencies = { -- dependencies
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+	},
 }
 lazy.setup(plugin_list)
