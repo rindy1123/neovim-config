@@ -14,6 +14,7 @@ configs.setup({
 		"html",
 		"typescript",
 		"sql",
+		"solidity",
 	},
 	sync_install = false,
 	highlight = { enable = true },

@@ -25,29 +25,38 @@ function lazy.setup(plugins)
 end
 
 local plugin_list = {
-	-- Better Syntax Support
-	{ "sheerun/vim-polyglot" },
 	-- Auto pairs for '(' '[' '{'
 	{ "jiangmiao/auto-pairs" },
 	-- Status Line
-	{ "vim-airline/vim-airline" },
-	{ "vim-airline/vim-airline-themes" },
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 	-- Font
 	{ "ryanoasis/vim-devicons" },
 	-- Comment out/Uncomment
 	{ "tomtom/tcomment_vim" },
 	-- Startup Screen
-	{ "mhinz/vim-startify" },
-	-- colorscheme
 	{
-		"tomasiser/vim-code-dark",
-		lazy = false,
-		priority = 1000,
+		"nvimdev/dashboard-nvim",
+		event = "VimEnter",
 		config = function()
-			-- load the colorscheme here
-			vim.cmd([[colorscheme tokyonight]])
+			require("dashboard").setup({
+
+				theme = "hyper",
+				config = {
+					week_header = {
+						enable = true,
+					},
+					shortcut = {
+						{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
+					},
+				},
+			})
 		end,
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
+	-- colorscheme
 	{ "tomasiser/vim-code-dark" },
 	{ "folke/tokyonight.nvim" },
 	-- LSP
@@ -95,21 +104,20 @@ local plugin_list = {
 		cmd = "Copilot",
 		event = "InsertEnter",
 	},
-	-- Debuger
-	{ "mfussenegger/nvim-dap", "rcarriga/nvim-dap-ui" },
 	{
-		"leoluz/nvim-dap-go",
-		config = function()
-			require("dap-go").setup()
-		end,
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	-- Golang
 	{
-		"olexsmir/gopher.nvim",
-		dependencies = { -- dependencies
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
+		"romgrk/barbar.nvim",
+		dependencies = {
+			"lewis6991/gitsigns.nvim",
+			"nvim-tree/nvim-web-devicons",
 		},
+		init = function()
+			vim.g.barbar_auto_setup = false
+		end,
+		opts = {},
 	},
 }
 lazy.setup(plugin_list)

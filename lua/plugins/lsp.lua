@@ -12,11 +12,13 @@ local servers = {
 	"marksman",
 	"eslint",
 	"diagnosticls",
-	"sqls",
+	"pyright",
+	"solidity_ls",
 }
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
+	automatic_installation = true,
 })
 
 -- Global mappings.
@@ -30,12 +32,60 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require("lspconfig")
 
+local on_attach = function(_, _)
+	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+	vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+	vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+end
+
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({
-		-- on_attach = my_custom_on_attach,
-		capabilities = capabilities,
-	})
+	if lsp == "golsp" then
+		lspconfig[lsp].setup({
+			on_attach = on_attach,
+			settings = {
+				gopls = {
+					analyses = {
+						unusedparams = true,
+					},
+					staticcheck = true,
+				},
+			},
+			capabilities = capabilities,
+		})
+	elseif lsp == "eslint" then
+		lspconfig[lsp].setup({
+			on_attach = function(_, bufnr)
+				-- autoformat
+				local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
+				vim.api.nvim_create_autocmd("BufWritePre", {
+					group = lsp_fmt_group,
+					callback = function()
+						local efm = vim.lsp.get_clients({ name = "efm" })
+
+						if vim.tbl_isempty(efm) then
+							return
+						end
+
+						vim.lsp.buf.format({ name = "efm", async = true })
+					end,
+				})
+
+				vim.api.nvim_create_autocmd("BufWritePre", {
+					buffer = bufnr,
+					command = "EslintFixAll",
+				})
+			end,
+			capabilities = capabilities,
+		})
+	else
+		lspconfig[lsp].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+	end
 end
 
 -- luasnip setup
@@ -81,42 +131,4 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 	},
-})
-
-local on_attach = function(_, _)
-	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
-	vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-	vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-	vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
-end
-
--- Configuration for each language server
-lspconfig.gopls.setup({
-	on_attach = on_attach,
-	settings = {
-		gopls = {
-			analyses = {
-				unusedparams = true,
-			},
-			staticcheck = true,
-		},
-	},
-})
-lspconfig.lua_ls.setup({ on_attach = on_attach })
-lspconfig.rust_analyzer.setup({ on_attach = on_attach })
-lspconfig.tsserver.setup({ on_attach = on_attach })
-lspconfig.jsonls.setup({ on_attach = on_attach })
-lspconfig.dockerls.setup({ on_attach = on_attach })
-lspconfig.docker_compose_language_service.setup({ on_attach = on_attach })
-lspconfig.marksman.setup({ on_attach = on_attach })
-lspconfig.diagnosticls.setup({ on_attach = on_attach })
-lspconfig.sqls.setup({ on_attach = on_attach })
-lspconfig.eslint.setup({
-	on_attach = function(_, bufnr)
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			buffer = bufnr,
-			command = "EslintFixAll",
-		})
-	end,
 })
