@@ -3,9 +3,10 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		go = { "goimports", "gofmt", "golines" },
-		javascript = { "prettier" },
-		typescript = { "prettier" },
-		typescriptreact = { "prettier" },
+		javascript = { "prettierd" },
+		typescript = { "prettierd" },
+		typescriptreact = { "prettierd" },
+		solidity = { "prettierd" },
 		rust = { "rustfmt" },
 		json = { "jq" },
 		markdown = { "mdformat" },

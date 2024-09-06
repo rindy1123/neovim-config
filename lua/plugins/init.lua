@@ -97,7 +97,6 @@ local plugin_list = {
 	{ "xiyaowong/nvim-transparent" },
 	-- Toggle terminal
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
-	{ "toppair/peek.nvim", run = "deno task --quiet build:fast" },
 	-- GitHub Copilot
 	{
 		"zbirenbaum/copilot.lua",
@@ -117,7 +116,9 @@ local plugin_list = {
 		init = function()
 			vim.g.barbar_auto_setup = false
 		end,
-		opts = {},
+		opts = {
+			insert_at_end = true,
+		},
 	},
 }
 lazy.setup(plugin_list)
