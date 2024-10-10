@@ -105,6 +105,15 @@ local plugin_list = {
 	},
 	{
 		"folke/trouble.nvim",
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+		},
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{
@@ -119,6 +128,11 @@ local plugin_list = {
 		opts = {
 			insert_at_end = true,
 		},
+	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		opts = {},
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 	},
 }
 lazy.setup(plugin_list)

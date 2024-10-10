@@ -5,7 +5,7 @@ local servers = {
 	"gopls",
 	"lua_ls",
 	"rust_analyzer",
-	"tsserver",
+	"ts_ls",
 	"jsonls",
 	"docker_compose_language_service",
 	"dockerls",
