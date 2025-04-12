@@ -21,15 +21,16 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.updatetime = 300
 vim.opt.signcolumn = "yes"
+vim.opt.laststatus = 3
 
 -- colorscheme
 vim.cmd([[colorscheme habamax]])
 
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = augroup,
-	desc = "Highlight on yank",
-	callback = function(event)
-		vim.highlight.on_yank({ higroup = "Visual", timeout = 500 })
-	end,
+  group = augroup,
+  desc = "Highlight on yank",
+  callback = function(event)
+    vim.highlight.on_yank({ higroup = "Visual", timeout = 500 })
+  end,
 })
