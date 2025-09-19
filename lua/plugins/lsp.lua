@@ -36,8 +36,6 @@ vim.diagnostic.config({ virtual_text = true })
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local lspconfig = require("lspconfig")
-
 local on_attach = function(_, _)
   vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
@@ -49,7 +47,7 @@ end
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 for _, lsp in ipairs(servers) do
   if lsp == "golsp" then
-    lspconfig[lsp].setup({
+    vim.lsp.config(lsp, {
       on_attach = on_attach,
       settings = {
         gopls = {
@@ -61,33 +59,8 @@ for _, lsp in ipairs(servers) do
       },
       capabilities = capabilities,
     })
-  elseif lsp == "eslint" then
-    lspconfig[lsp].setup({
-      on_attach = function(_, bufnr)
-        -- autoformat
-        local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          group = lsp_fmt_group,
-          callback = function()
-            local efm = vim.lsp.get_clients({ name = "efm" })
-
-            if vim.tbl_isempty(efm) then
-              return
-            end
-
-            vim.lsp.buf.format({ name = "efm", async = true })
-          end,
-        })
-
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          buffer = bufnr,
-          command = "EslintFixAll",
-        })
-      end,
-      capabilities = capabilities,
-    })
-  else
-    lspconfig[lsp].setup({
+  elseif lsp ~= "ts_ls" then
+    vim.lsp.config(lsp, {
       on_attach = on_attach,
       capabilities = capabilities,
     })
