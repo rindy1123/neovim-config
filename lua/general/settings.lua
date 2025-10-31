@@ -24,13 +24,13 @@ vim.opt.signcolumn = "yes"
 vim.opt.laststatus = 3
 
 -- colorscheme
-vim.cmd([[colorscheme habamax]])
+vim.cmd([[colorscheme codedark]])
 
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup,
   desc = "Highlight on yank",
   callback = function(event)
-    vim.highlight.on_yank({ higroup = "Visual", timeout = 500 })
+    vim.hl.on_yank({ higroup = "Visual", timeout = 500 })
   end,
 })
