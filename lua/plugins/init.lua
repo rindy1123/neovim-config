@@ -95,16 +95,9 @@ local plugin_list = {
   { "nvim-tree/nvim-tree.lua" },
   -- Toggle Trancparency
   { "xiyaowong/nvim-transparent" },
-  -- Toggle terminal
-  { "akinsho/toggleterm.nvim",    version = "*", config = true },
-  -- GitHub Copilot
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-  },
   {
     "folke/trouble.nvim",
+    lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {}, -- for default options, refer to the configuration section for custom setup.
     cmd = "Trouble",
@@ -159,14 +152,5 @@ local plugin_list = {
       dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
     },
   },
-  {
-    'nvim-flutter/flutter-tools.nvim',
-    lazy = false,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim', -- optional for vim.ui.select
-    },
-    config = true,
-  }
 }
 lazy.setup(plugin_list)

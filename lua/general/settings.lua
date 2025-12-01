@@ -23,9 +23,6 @@ vim.opt.updatetime = 300
 vim.opt.signcolumn = "yes"
 vim.opt.laststatus = 3
 
--- colorscheme
-vim.cmd([[colorscheme codedark]])
-
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup,
